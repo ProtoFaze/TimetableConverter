@@ -3,6 +3,7 @@ name: Weekly Timetable Update
 on:
   schedule:
     - cron: '0 19 * * 0'  # Runs every Sunday at midnight UTC
+  workflow_dispatch:
 
 jobs:
   run-script:
