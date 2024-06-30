@@ -4,8 +4,9 @@ from bs4 import BeautifulSoup
 
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
-import os.path
-from dotenv import load_dotenv
+import os
+import json
+import base64
 import smtplib,ssl
 from email.message import EmailMessage
 
