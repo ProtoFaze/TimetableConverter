@@ -79,7 +79,7 @@ def create_event(service,entry):
         }
         }
     
-    return service.events().insert(calendarId = 'damonngkhaiweng@gmail.com', body = event).execute()
+    return service.events().insert(calendarId = os.getenv('RECEIVER'), body = event).execute()
     
 
 def main():
