@@ -8,6 +8,8 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: cred
 
     steps:
     - name: Checkout code
@@ -25,7 +27,7 @@ jobs:
 
     - name: Run timetable script
       env:
-        SENDER: ${{ secrets.SENDER }}
+        SENDER: ${{ env.SENDER }}
         PASSWORD: ${{ secrets.PASSWORD }}
         RECEIVER: ${{ secrets.RECEIVER }}
         SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
