@@ -1,11 +1,12 @@
 this work is inspired by GDSC@APU's APSpace Timetable Automation workshop presented by JPChong  
-link to recording here https://youtu.be/YpdT6wfD6_E?si=_NUVGkj2SwrGVds3
+link to recording here: https://youtu.be/YpdT6wfD6_E?si=_NUVGkj2SwrGVds3  
+original repository here: https://github.com/cipe5555/APU-Timetable-to-Google-Calendar/tree/main  
 
 To set up the Python script and automation workflow locally on your device,  
 please follow the instructions in the attached PDF and recording from the link above
 
 The section onwards are the instructions to set up the automation via GitHub actions  
-after committing your script to GitHub.  
+After committing your script to GitHub,  
 prepare a requirements.txt in the root folder and paste in these dependencies to allow the workflow to import the necessary libraries
 
     requests==2.25.1
