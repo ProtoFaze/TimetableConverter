@@ -9,9 +9,10 @@ from dotenv import load_dotenv
 import smtplib,ssl
 from email.message import EmailMessage
 
-current_directory = os.path.dirname(__file__)
-env_file_path = os.path.join(current_directory, 'cred.env')
-load_dotenv(env_file_path)
+# Directly access environment variables provided by GitHub Secrets
+SENDER = os.getenv('SENDER')
+PASSWORD = os.getenv('PASSWORD')
+RECEIVER = os.getenv('RECEIVER')
 
 class Email:
     def __init__(self):
@@ -44,8 +45,9 @@ def fetch_time_table(week, intake, intake_group):
     return soup.find('table', class_ = 'table')
     
 def get_credentials(SCOPES):
-    SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__) ,'service_account.json')
-    creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes = SCOPES)
+    # Decode the base64 encoded service account JSON from the environment variable
+    service_account_info = json.loads(base64.b64decode(os.getenv('SERVICE_ACCOUNT')))
+    creds = service_account.Credentials.from_service_account_info(service_account_info, scopes=SCOPES)
     return creds
 
 def create_event(service,entry):
