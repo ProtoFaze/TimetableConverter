@@ -4,8 +4,8 @@ link to recording here https://youtu.be/YpdT6wfD6_E?si=_NUVGkj2SwrGVds3
 To set up the Python script and automation workflow locally on your device,  
 please follow the instructions in the attached PDF and recording from the link above
 
-The section onwards are the instructions to set up the automation via GitHub actions
-after committing your script to GitHub
+The section onwards are the instructions to set up the automation via GitHub actions  
+after committing your script to GitHub.  
 prepare a requirements.txt in the root folder and paste in these dependencies to allow the workflow to import the necessary libraries
 
     requests==2.25.1
@@ -61,8 +61,11 @@ then paste in this yaml text (do read the comments for explanations)
             SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}  #this line is optional if you converted your service_account.json into a repo secret
           run: python timetable_converter.py      
 
-lastly, to modify the Python script
-if you followed the pdf or recording, this is the immediate modification after the file is completely coded according to the workshop, if not, do refer to those materials
+lastly, to modify the Python script.  
+if you followed the pdf or recording,  
+this is the immediate modification after the file is completely coded according to the workshop, if not, do refer to those materials  
+
+this is the updated import
 
     from datetime import  datetime, timedelta, date
     import requests
