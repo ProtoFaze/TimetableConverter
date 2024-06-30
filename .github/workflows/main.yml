@@ -2,7 +2,7 @@ name: Weekly Timetable Update
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Runs every Sunday at midnight UTC
+    - cron: '50 6 * * 0'  # Runs every Sunday at midnight UTC
 
 jobs:
   run-script:
