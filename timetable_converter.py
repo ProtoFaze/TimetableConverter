@@ -78,9 +78,9 @@ def create_event(service,entry):
     
 
 def main():
-    intake=os.getenv('INTAKE_CODE')
+    intake='APU3F2502CS(AI)'
     intake_group='All'
-    remove_list = [os.getenv('REMOVE_LIST')]
+    remove_list = ['ALG']
     week_start = get_week_start()
     print(intake, remove_list)
 
