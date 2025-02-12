@@ -10,11 +10,6 @@ import base64
 import smtplib,ssl
 from email.message import EmailMessage
 
-# Directly access environment variables provided by GitHub Secrets
-SENDER = os.getenv('SENDER')
-PASSWORD = os.getenv('PASSWORD')
-RECEIVER = os.getenv('RECEIVER')
-
 class Email:
     def __init__(self):
         self.sender = os.getenv('SENDER')
@@ -25,7 +20,7 @@ class Email:
     def send_email(self, html_content):
         context = ssl.create_default_context()
         em = EmailMessage()
-        em['From'] = self.sender
+        em['From'] = self.
         em['To'] = self.receiver
         em['Subject'] = self.subject
         em.set_content(html_content, subtype='html')
@@ -83,9 +78,9 @@ def create_event(service,entry):
     
 
 def main():
-    intake='APU2F2311CS(AI)'
+    intake=os.getenv('INTAKE_CODE')
     intake_group='All'
-    remove_list = ['MAE']
+    remove_list = [os.getenv('REMOVE_LIST')]
     week_start = get_week_start()
 
     timetable_table = fetch_time_table(week_start, intake, intake_group)
