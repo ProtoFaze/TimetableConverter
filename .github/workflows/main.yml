@@ -29,4 +29,6 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         RECEIVER: ${{ secrets.RECEIVER }}
         SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+        INTAKE_CODE: ${{ secrets.INTAKE_CODE }}
+        REMOVE_LIST: ${{ secrets.REMOVE_LIST }}
       run: python timetable_converter.py
