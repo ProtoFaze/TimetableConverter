@@ -20,7 +20,7 @@ class Email:
     def send_email(self, html_content):
         context = ssl.create_default_context()
         em = EmailMessage()
-        em['From'] = self.
+        em['From'] = self.sender
         em['To'] = self.receiver
         em['Subject'] = self.subject
         em.set_content(html_content, subtype='html')
