@@ -82,6 +82,7 @@ def main():
     intake_group='All'
     remove_list = [os.getenv('REMOVE_LIST')]
     week_start = get_week_start()
+    print(intake, remove_list)
 
     timetable_table = fetch_time_table(week_start, intake, intake_group)
     if timetable_table:
